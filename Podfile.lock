@@ -1,0 +1,122 @@
+PODS:
+  - AACarousel (1.1.0)
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
+  - DropDownMenuKit (0.8.4)
+  - FacebookCore (0.3.0):
+    - Bolts (~> 1.8)
+    - FBSDKCoreKit (~> 4.27)
+  - FacebookLogin (0.3.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.3)
+    - FBSDKCoreKit (~> 4.27)
+    - FBSDKLoginKit (~> 4.27)
+  - FBSDKCoreKit (4.33.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.33.0):
+    - FBSDKCoreKit
+  - GoogleSignIn (4.1.2):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.1.4):
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+  - GoogleToolboxForMac/Defines (2.1.4)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.4)":
+    - GoogleToolboxForMac/DebugUtils (= 2.1.4)
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.1.4)"
+  - GTMOAuth2 (1.1.6):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.1.15):
+    - GTMSessionFetcher/Full (= 1.1.15)
+  - GTMSessionFetcher/Core (1.1.15)
+  - GTMSessionFetcher/Full (1.1.15):
+    - GTMSessionFetcher/Core (= 1.1.15)
+  - IQKeyboardManagerSwift (6.0.3)
+  - JTMaterialTransition (2.0.1)
+  - Kingfisher (4.8.0)
+  - RAMAnimatedTabBarController (3.2.0)
+  - Realm (3.5.0):
+    - Realm/Headers (= 3.5.0)
+  - Realm/Headers (3.5.0)
+  - RealmSwift (3.5.0):
+    - Realm (= 3.5.0)
+  - RESideMenu (4.0.7)
+  - SwiftValidator (4.0.0)
+
+DEPENDENCIES:
+  - AACarousel
+  - DropDownMenuKit
+  - FacebookCore
+  - FacebookLogin
+  - GoogleSignIn
+  - IQKeyboardManagerSwift
+  - JTMaterialTransition (~> 2.0)
+  - Kingfisher (~> 4.0)
+  - RAMAnimatedTabBarController
+  - RealmSwift
+  - RESideMenu
+  - SwiftValidator (from `https://github.com/jpotts18/SwiftValidator.git`, branch `master`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AACarousel
+    - Bolts
+    - DropDownMenuKit
+    - FacebookCore
+    - FacebookLogin
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - GoogleSignIn
+    - GoogleToolboxForMac
+    - GTMOAuth2
+    - GTMSessionFetcher
+    - IQKeyboardManagerSwift
+    - JTMaterialTransition
+    - Kingfisher
+    - RAMAnimatedTabBarController
+    - Realm
+    - RealmSwift
+    - RESideMenu
+
+EXTERNAL SOURCES:
+  SwiftValidator:
+    :branch: master
+    :git: https://github.com/jpotts18/SwiftValidator.git
+
+CHECKOUT OPTIONS:
+  SwiftValidator:
+    :commit: ba27b0e501bf542b5c1a97bed8f706d12fb2d4f4
+    :git: https://github.com/jpotts18/SwiftValidator.git
+
+SPEC CHECKSUMS:
+  AACarousel: 6131fa3650201a3ce10b6581621f3cade221b079
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  DropDownMenuKit: 3800deee46883bb09725376d987900768532f588
+  FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
+  FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
+  FBSDKCoreKit: 572b047a7e029bc44542bcf8a59414e7ff2b543e
+  FBSDKLoginKit: 88cb456349cfb3b554427ce4f8b43729d85dfb40
+  GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
+  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
+  GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
+  IQKeyboardManagerSwift: 04e8679f85e496bb2c474eeb9284052f1b3c391c
+  JTMaterialTransition: 2350b44b404d1982a7ba755866cc65da452f4eec
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  RAMAnimatedTabBarController: 0499157f67053a21bcccb52a25dd3c6ecdbfb4f6
+  Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
+  RealmSwift: 3322562622fda2ad596985ead4d8d8be30cf838c
+  RESideMenu: f24c508404b49c667344c54aba7e590883533958
+  SwiftValidator: 25ded5ca1f10c05adf57f6ac82a72d28ac8d91af
+
+PODFILE CHECKSUM: ce72bea8dcbae193a01f76ba1b5cfa637ed00bce
+
+COCOAPODS: 1.5.0
