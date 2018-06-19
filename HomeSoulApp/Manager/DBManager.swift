@@ -26,7 +26,7 @@ class DBManager {
     func addShoppingCartItem(object: ShoppingCartItem)   {
    
         try! database.write {
-            database.add(object, update: true)
+            database.add(object, update: false)
             print("Added new object")
         }
     }

@@ -18,6 +18,12 @@ pod 'FacebookCore'
   pod "DropDownMenuKit"
   pod 'RAMAnimatedTabBarController'
   pod 'RealmSwift'
+  pod 'SinchVerification-Swift'
+  pod 'LTHRadioButton'
+  pod 'Alamofire'
+  pod 'AlamofireObjectMapper'
+  pod 'PKHUD'
+  pod 'Kingfisher'
   
   target 'HomeSoulAppTests' do
     inherit! :search_paths

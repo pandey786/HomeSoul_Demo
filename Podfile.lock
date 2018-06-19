@@ -1,5 +1,9 @@
 PODS:
   - AACarousel (1.1.0)
+  - Alamofire (4.7.2)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -42,6 +46,9 @@ PODS:
   - IQKeyboardManagerSwift (6.0.3)
   - JTMaterialTransition (2.0.1)
   - Kingfisher (4.8.0)
+  - LTHRadioButton (1.2.0)
+  - ObjectMapper (3.1.0)
+  - PKHUD (5.0.0)
   - RAMAnimatedTabBarController (3.2.0)
   - Realm (3.5.0):
     - Realm/Headers (= 3.5.0)
@@ -49,25 +56,34 @@ PODS:
   - RealmSwift (3.5.0):
     - Realm (= 3.5.0)
   - RESideMenu (4.0.7)
+  - SinchVerification-Swift (2.0.6)
   - SwiftValidator (4.0.0)
 
 DEPENDENCIES:
   - AACarousel
+  - Alamofire
+  - AlamofireObjectMapper
   - DropDownMenuKit
   - FacebookCore
   - FacebookLogin
   - GoogleSignIn
   - IQKeyboardManagerSwift
   - JTMaterialTransition (~> 2.0)
+  - Kingfisher
   - Kingfisher (~> 4.0)
+  - LTHRadioButton
+  - PKHUD
   - RAMAnimatedTabBarController
   - RealmSwift
   - RESideMenu
+  - SinchVerification-Swift
   - SwiftValidator (from `https://github.com/jpotts18/SwiftValidator.git`, branch `master`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AACarousel
+    - Alamofire
+    - AlamofireObjectMapper
     - Bolts
     - DropDownMenuKit
     - FacebookCore
@@ -81,10 +97,14 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - JTMaterialTransition
     - Kingfisher
+    - LTHRadioButton
+    - ObjectMapper
+    - PKHUD
     - RAMAnimatedTabBarController
     - Realm
     - RealmSwift
     - RESideMenu
+    - SinchVerification-Swift
 
 EXTERNAL SOURCES:
   SwiftValidator:
@@ -98,6 +118,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AACarousel: 6131fa3650201a3ce10b6581621f3cade221b079
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   DropDownMenuKit: 3800deee46883bb09725376d987900768532f588
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
@@ -111,12 +133,16 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 04e8679f85e496bb2c474eeb9284052f1b3c391c
   JTMaterialTransition: 2350b44b404d1982a7ba755866cc65da452f4eec
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  LTHRadioButton: bcd4b49a8e0af81b5140e67583a868d96e956557
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   RAMAnimatedTabBarController: 0499157f67053a21bcccb52a25dd3c6ecdbfb4f6
   Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
   RealmSwift: 3322562622fda2ad596985ead4d8d8be30cf838c
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
+  SinchVerification-Swift: 6188011479120d3e6ff13fa646189b10194e308e
   SwiftValidator: 25ded5ca1f10c05adf57f6ac82a72d28ac8d91af
 
-PODFILE CHECKSUM: ce72bea8dcbae193a01f76ba1b5cfa637ed00bce
+PODFILE CHECKSUM: 18dcb4fb64477a577e5e64a5ccb56e4c1e5290f9
 
 COCOAPODS: 1.5.0

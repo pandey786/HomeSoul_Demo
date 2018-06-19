@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5133320E20CE5486002EA1E0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133320D20CE5485002EA1E0 /* SignUpViewController.swift */; };
+		5133321020CE549A002EA1E0 /* LegalNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133320F20CE549A002EA1E0 /* LegalNameViewController.swift */; };
+		5133321220CE54A8002EA1E0 /* AccountTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133321120CE54A8002EA1E0 /* AccountTypeViewController.swift */; };
+		5133321420CE54B4002EA1E0 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133321320CE54B3002EA1E0 /* UserDetailsViewController.swift */; };
+		5133321620CE54C0002EA1E0 /* SubmitRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133321520CE54C0002EA1E0 /* SubmitRegistrationViewController.swift */; };
+		51AFB72920D8DA2400458F3A /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AFB72720D8DA2300458F3A /* Endpoints.swift */; };
+		51AFB72A20D8DA2400458F3A /* UserRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AFB72820D8DA2300458F3A /* UserRegistrationService.swift */; };
 		51B9D39920C97341008368AE /* HomeSoulAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B9D39820C97341008368AE /* HomeSoulAppTests.swift */; };
 		51B9D3A420C97341008368AE /* HomeSoulAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B9D3A320C97341008368AE /* HomeSoulAppUITests.swift */; };
 		51B9D43720C975A2008368AE /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B9D3B220C975A1008368AE /* AppUtility.swift */; };
@@ -96,7 +103,6 @@
 		51B9D48B20C975A2008368AE /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B9D43120C975A2008368AE /* DashboardViewController.swift */; };
 		51B9D48C20C975A2008368AE /* DashBoardProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B9D43220C975A2008368AE /* DashBoardProductCell.swift */; };
 		51B9D48D20C975A2008368AE /* DashBoardProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51B9D43320C975A2008368AE /* DashBoardProductCell.xib */; };
-		51B9D48E20C975A2008368AE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B9D43520C975A2008368AE /* SignUpViewController.swift */; };
 		51B9D48F20C975A2008368AE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B9D43620C975A2008368AE /* LoginViewController.swift */; };
 		51B9D49220C9784B008368AE /* ShoppingCartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B9D49120C9784B008368AE /* ShoppingCartItem.swift */; };
 		51B9D49520C97A1D008368AE /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B9D49420C97A1D008368AE /* DBManager.swift */; };
@@ -129,6 +135,13 @@
 /* Begin PBXFileReference section */
 		022650BB0BA2A5DBD659C937 /* Pods_HomeSoulApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeSoulApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12EF6F300894F3E38E922C55 /* Pods-HomeSoulAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeSoulAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeSoulAppUITests/Pods-HomeSoulAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5133320D20CE5485002EA1E0 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5133320F20CE549A002EA1E0 /* LegalNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalNameViewController.swift; sourceTree = "<group>"; };
+		5133321120CE54A8002EA1E0 /* AccountTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeViewController.swift; sourceTree = "<group>"; };
+		5133321320CE54B3002EA1E0 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		5133321520CE54C0002EA1E0 /* SubmitRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitRegistrationViewController.swift; sourceTree = "<group>"; };
+		51AFB72720D8DA2300458F3A /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		51AFB72820D8DA2300458F3A /* UserRegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegistrationService.swift; sourceTree = "<group>"; };
 		51B9D38020C97340008368AE /* HomeSoulApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeSoulApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51B9D38F20C97341008368AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51B9D39420C97341008368AE /* HomeSoulAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeSoulAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,7 +237,6 @@
 		51B9D43120C975A2008368AE /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		51B9D43220C975A2008368AE /* DashBoardProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashBoardProductCell.swift; sourceTree = "<group>"; };
 		51B9D43320C975A2008368AE /* DashBoardProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashBoardProductCell.xib; sourceTree = "<group>"; };
-		51B9D43520C975A2008368AE /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		51B9D43620C975A2008368AE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		51B9D49120C9784B008368AE /* ShoppingCartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartItem.swift; sourceTree = "<group>"; };
 		51B9D49420C97A1D008368AE /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
@@ -279,6 +291,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5133320C20CE5485002EA1E0 /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				5133320D20CE5485002EA1E0 /* SignUpViewController.swift */,
+				5133320F20CE549A002EA1E0 /* LegalNameViewController.swift */,
+				5133321120CE54A8002EA1E0 /* AccountTypeViewController.swift */,
+				5133321320CE54B3002EA1E0 /* UserDetailsViewController.swift */,
+				5133321520CE54C0002EA1E0 /* SubmitRegistrationViewController.swift */,
+			);
+			path = "Sign Up";
+			sourceTree = "<group>";
+		};
+		51AFB72620D8DA2300458F3A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				51AFB72720D8DA2300458F3A /* Endpoints.swift */,
+				51AFB72820D8DA2300458F3A /* UserRegistrationService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		51B9D37720C97340008368AE = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +337,7 @@
 		51B9D38220C97340008368AE /* HomeSoulApp */ = {
 			isa = PBXGroup;
 			children = (
+				51AFB72620D8DA2300458F3A /* Network */,
 				51B9D49820C97ACD008368AE /* Mocks */,
 				51B9D40B20C975A1008368AE /* Application */,
 				51B9D49020C9783C008368AE /* Models */,
@@ -759,7 +793,7 @@
 		51B9D43420C975A2008368AE /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				51B9D43520C975A2008368AE /* SignUpViewController.swift */,
+				5133320C20CE5485002EA1E0 /* Sign Up */,
 				51B9D43620C975A2008368AE /* LoginViewController.swift */,
 			);
 			path = Login;
@@ -1023,6 +1057,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HomeSoulApp/Pods-HomeSoulApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AACarousel/AACarousel.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDownMenuKit/DropDownMenuKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
@@ -1035,15 +1071,21 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JTMaterialTransition/JTMaterialTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/LTHRadioButton/LTHRadioButton.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/RESideMenu/RESideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SinchVerification-Swift/SinchVerification.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftValidator/SwiftValidator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AACarousel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDownMenuKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
@@ -1056,10 +1098,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTMaterialTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTHRadioButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RESideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SinchVerification.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftValidator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1085,6 +1131,7 @@
 				51B9D46520C975A2008368AE /* TelegramPickerViewController.swift in Sources */,
 				51B9D49720C97A8F008368AE /* ProductModel.swift in Sources */,
 				51B9D49A20C97AD8008368AE /* MockFile.swift in Sources */,
+				5133321420CE54B4002EA1E0 /* UserDetailsViewController.swift in Sources */,
 				51B9D47620C975A2008368AE /* ProdListCollectionViewCell_List.swift in Sources */,
 				51B9D44920C975A2008368AE /* AttributedTextBlock.swift in Sources */,
 				51B9D45320C975A2008368AE /* OneTextFieldViewController.swift in Sources */,
@@ -1101,13 +1148,13 @@
 				51B9D44220C975A2008368AE /* UISearchBar+Extensions.swift in Sources */,
 				51B9D46620C975A2008368AE /* ItemWithPhoto.swift in Sources */,
 				51B9D44420C975A2008368AE /* UIAlertController+Extensions.swift in Sources */,
-				51B9D48E20C975A2008368AE /* SignUpViewController.swift in Sources */,
 				51B9D46C20C975A2008368AE /* Button.swift in Sources */,
 				51B9D44620C975A2008368AE /* Common+Extensions.swift in Sources */,
 				51B9D48020C975A2008368AE /* FilterListViewController.swift in Sources */,
 				51B9D45420C975A2008368AE /* Assets.swift in Sources */,
 				51B9D44320C975A2008368AE /* UIApplication+Extensions.swift in Sources */,
 				51B9D48920C975A2008368AE /* SideMenuViewController.swift in Sources */,
+				5133321020CE549A002EA1E0 /* LegalNameViewController.swift in Sources */,
 				51B9D48A20C975A2008368AE /* ShoppingCartViewController.swift in Sources */,
 				51B9D48F20C975A2008368AE /* LoginViewController.swift in Sources */,
 				51B9D48620C975A2008368AE /* ProductDetailsViewController.swift in Sources */,
@@ -1124,6 +1171,7 @@
 				51B9D43B20C975A2008368AE /* UIViewController+Extensions.swift in Sources */,
 				51B9D46B20C975A2008368AE /* TextField.swift in Sources */,
 				51B9D46020C975A2008368AE /* ColorPickerViewController.swift in Sources */,
+				5133321220CE54A8002EA1E0 /* AccountTypeViewController.swift in Sources */,
 				51B9D43E20C975A2008368AE /* String+Extensions.swift in Sources */,
 				51B9D49520C97A1D008368AE /* DBManager.swift in Sources */,
 				51B9D47D20C975A2008368AE /* FilterListTableViewCell_FirstLevel.swift in Sources */,
@@ -1132,9 +1180,11 @@
 				51B9D47B20C975A2008368AE /* FilterListTableViewCell_SecondLevel.swift in Sources */,
 				51B9D46720C975A2008368AE /* LikeButtonCell.swift in Sources */,
 				51B9D44A20C975A2008368AE /* TextViewController.swift in Sources */,
+				51AFB72920D8DA2400458F3A /* Endpoints.swift in Sources */,
 				51B9D48220C975A2008368AE /* SortOrderTableViewCell.swift in Sources */,
 				51B9D44C20C975A2008368AE /* LocaleStore.swift in Sources */,
 				51B9D48120C975A2008368AE /* SortOrderViewController.swift in Sources */,
+				5133321620CE54C0002EA1E0 /* SubmitRegistrationViewController.swift in Sources */,
 				51B9D44D20C975A2008368AE /* LocaleInfo.swift in Sources */,
 				51B9D47120C975A2008368AE /* AppExtensions.swift in Sources */,
 				51B9D49D20C98476008368AE /* ShoppingCartTableViewCell.swift in Sources */,
@@ -1145,6 +1195,7 @@
 				51B9D46F20C975A2008368AE /* CITreeViewNode.swift in Sources */,
 				51B9D46E20C975A2008368AE /* CITreeView.swift in Sources */,
 				51B9D46420C975A2008368AE /* PhotoLayout.swift in Sources */,
+				51AFB72A20D8DA2400458F3A /* UserRegistrationService.swift in Sources */,
 				51B9D45C20C975A2008368AE /* ContactsPickerViewController.swift in Sources */,
 				51B9D45B20C975A2008368AE /* PickerViewViewController.swift in Sources */,
 				51B9D43A20C975A2008368AE /* UIImageView+Extensions.swift in Sources */,
@@ -1153,6 +1204,7 @@
 				51B9D45820C975A2008368AE /* SearchHistoryManager.swift in Sources */,
 				51B9D48C20C975A2008368AE /* DashBoardProductCell.swift in Sources */,
 				51B9D45720C975A2008368AE /* LocationPickerViewController.swift in Sources */,
+				5133320E20CE5486002EA1E0 /* SignUpViewController.swift in Sources */,
 				51B9D48720C975A2008368AE /* ProdImagesCollectionViewCell.swift in Sources */,
 				51B9D47020C975A2008368AE /* UIWindowExtension.swift in Sources */,
 				51B9D46920C975A2008368AE /* SegmentedControl.swift in Sources */,

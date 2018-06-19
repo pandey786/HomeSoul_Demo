@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         self.setUpViews()
         
         //Load Dashboard Explicitly
-        AppInstances.appDelegate.loadDashboardScreen()
+        //AppInstances.appDelegate.loadDashboardScreen()
     }
     
     override func viewWillAppear(_ animated: Bool) {

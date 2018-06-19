@@ -130,10 +130,12 @@ extension ProductListViewController: UICollectionViewDataSource, UICollectionVie
         if let existingItem = currentItems.filter(NSPredicate.init(format: "product_Id == %@", prodModel.product_Id)).first {
             try! DBManager.sharedInstance.database.write {
                 existingItem.product_Quantity =  existingItem.product_Quantity + 1
+                DBManager.sharedInstance.database.add(existingItem, update: true)
             }
         } else {
             
             let shoppingCartItem = ShoppingCartItem()
+            shoppingCartItem.id = Int(arc4random())
             shoppingCartItem.product_Id = prodModel.product_Id
             shoppingCartItem.product_Name = prodModel.product_Title
             shoppingCartItem.product_Price = prodModel.product_Price
