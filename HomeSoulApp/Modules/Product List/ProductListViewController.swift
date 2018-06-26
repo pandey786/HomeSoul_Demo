@@ -21,18 +21,21 @@ class ProductListViewController: UIViewController {
     //Set Prod Category
     var productCategory: ProductCategory?
     var viewType: ViewType = .grid
+    
+    var productCategoryList = [ProductCategoryModel]()
     var productList = [ProductModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Set Up Data Source
+        self.productCategoryList = MockData().createMockData()
+        self.productList = (self.productCategoryList.first?.category_Catalog)!
+        
         let title = prepareNavigationBarMenuTitleView()
         self.prepareNavigationBarMenu(title)
         self.navigationBarMenu.container = self.view
         self.viewHeader.addDropShadow()
-        
-        //Set Up Data Source
-        self.productList = createProductList()
         
         //Register Collection Cells
         self.collectionViewProductList.register(UINib.init(nibName: "ProdListCollectionViewCell_Grid", bundle: nil), forCellWithReuseIdentifier: "ProdListCollectionViewCell_Grid")
@@ -169,16 +172,14 @@ extension ProductListViewController: DropDownMenuDelegate {
         navigationBarMenu = DropDownMenu(frame: view.bounds)
         navigationBarMenu.delegate = self
         
-        let productsArray = ["Embroidered", "Outdoor", "Plain & Texture", "Printed", "Wooven"]
-        
-        for product in productsArray {
+        for product in self.productCategoryList {
             let prodCell = DropDownMenuCell()
-            prodCell.textLabel?.text = product
+            prodCell.textLabel?.text = product.category_Design
             prodCell.menuAction = #selector(ProductListViewController.choose(_:))
             prodCell.menuTarget = self
-            prodCell.rowHeight = 57
+            prodCell.rowHeight = 44
             
-            if currentChoice == product {
+            if currentChoice == product.category_Design {
                 prodCell.accessoryType = .checkmark
             }
             navigationBarMenu.menuCells.append(prodCell)

@@ -25,6 +25,8 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var errorLabelMobile: UILabel!
     @IBOutlet weak var errorLabelOTP: UILabel!
+    @IBOutlet weak var labelError: UILabel!
+    @IBOutlet weak var constraintErrorViewHeight: NSLayoutConstraint!
     
     var viewState: ViewState = .enterMobileNumber
     var verification: Verification!
@@ -37,6 +39,7 @@ class SignUpViewController: UIViewController {
         
         self.setUpActionButton()
         self.displayOTPView(shouldDisplay: false)
+        self.displayErrorView(shouldDisplay: false, errorText: "")
         
         validator.styleTransformers(success:{ (validationRule) -> Void in
             print("here")
@@ -98,6 +101,19 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    public func displayErrorView(shouldDisplay: Bool, errorText: String) {
+        
+        self.view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.constraintErrorViewHeight.constant = shouldDisplay ? 40: 0
+            self.labelError.text = errorText
+            self.view.layoutIfNeeded()
+        }) { (success) in
+            
+        }
+    }
+    
     // MARK: - Actions
     // MARK: -
     @IBAction func buttonSignUpTapped(_ sender: Any) {
@@ -113,11 +129,33 @@ extension SignUpViewController: ValidationDelegate {
         switch self.viewState {
         case .enterMobileNumber:
             
-            self.displayOTPView(shouldDisplay: true)
+            //Call to Send OTP
+            UserRegistrationService.sendOTP(self.textFieldPhone.text!) { (isSuccess, responseStr) in
+                
+                if isSuccess {
+                    self.textFieldPhone.isEnabled = false
+                    self.displayOTPView(shouldDisplay: true)
+                    self.displayErrorView(shouldDisplay: false, errorText: "")
+                } else {
+                     self.textFieldPhone.isEnabled = true
+                    self.displayOTPView(shouldDisplay: false)
+                    self.displayErrorView(shouldDisplay: true, errorText: responseStr!)
+                }
+            }
+            
         case .enterOTP:
             
-            //Navigate to next Screen
-            self.performSegue(withIdentifier: "LegalNameViewController", sender: nil)
+            //Call to Validate OTP
+            UserRegistrationService.validateOTP(self.textFieldPhone.text!, otp: self.textFieldOTP.text!) { (isSuccess, responseStr) in
+                
+                if isSuccess {
+                    //Navigate to next Screen
+                    self.performSegue(withIdentifier: "LegalNameViewController", sender: nil)
+                    self.displayErrorView(shouldDisplay: false, errorText: "")
+                } else {
+                    self.displayErrorView(shouldDisplay: true, errorText: responseStr!)
+                }
+            }
         }
     }
     

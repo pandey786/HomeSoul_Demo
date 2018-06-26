@@ -9,8 +9,9 @@
 
 import Foundation
 
-class ProductModel {
+struct ProductModel {
     var product_Id = ""
     var product_Title = ""
+    var product_Image = ""
     var product_Price = ""
 }

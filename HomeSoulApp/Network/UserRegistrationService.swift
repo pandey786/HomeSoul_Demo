@@ -12,30 +12,45 @@ import AlamofireObjectMapper
 
 class UserRegistrationService {
     
-    /*
-     static func fetchMusicList(_ searchText: String, completionHandler: @escaping (_ musicList: ItunesMusicResultModel?, _ isError: Bool, _ error: String?) -> ()) {
-     
-     let itunesSearchUrl = Endpoints.ITunesMusicSearch.fetch.url + searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-     
-     Alamofire.request(itunesSearchUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
-     .validate()
-     .responseString(completionHandler: { (responseString) in
-     print(responseString.value ?? "Could not get proper response")
-     })
-     .responseObject { (response: DataResponse<ItunesMusicResultModel>) in
-     
-     switch response.result {
-     case .success(let musicList):
-     
-     //Response received successfully
-     completionHandler(musicList, false, nil)
-     break
-     case .failure(let error):
-     
-     //There was an error
-     completionHandler(nil, true, error.localizedDescription)
-     break
-     }
-     }
-     } */
+    static func sendOTP(_ mobileNumber: String, completionHandler: @escaping (_ isSuccessFull: Bool, _ error: String?) -> ()) {
+        
+        let sendOtpUrl = API.kSendSMSUrl + mobileNumber
+        Alamofire.request(sendOtpUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseString { (responseString) in
+            
+            if let responseString = responseString.result.value {
+                if  responseString == ResponseString.kOTPSentSuccessFull {
+                    completionHandler(true, nil)
+                } else {
+                    completionHandler(false, responseString)
+                }
+            } else {
+                completionHandler(false, nil)
+            }
+        }
+    }
+    
+    static func validateOTP(_ mobileNumber: String, otp: String, completionHandler: @escaping (_ isSuccessFull: Bool, _ error: String?) -> ()) {
+        
+        let verifyOtpUrl = API.kVerifySMSUrl + mobileNumber + "&otp=" + otp
+        Alamofire.request(verifyOtpUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseString { (responseString) in
+            
+            if let responseString = responseString.result.value {
+                if  responseString == ResponseString.kOTPVerifiedSuccessFull {
+                    completionHandler(true, nil)
+                } else {
+                    completionHandler(false, responseString)
+                }
+            } else {
+                completionHandler(false, nil)
+            }
+        }
+    }
+    
+    static func getTermsAndConditions(completionHandler: @escaping (_ htmlString: String?) -> ()) {
+        
+        let getTnCUrl = API.kGetTnCUrl
+        Alamofire.request(getTnCUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseString { (responseString) in
+            completionHandler(responseString.result.value)
+        }
+    }
 }

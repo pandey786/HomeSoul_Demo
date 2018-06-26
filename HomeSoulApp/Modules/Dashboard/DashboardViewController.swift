@@ -10,6 +10,7 @@ import UIKit
 import AACarousel
 import Kingfisher
 import AVKit
+import WebKit
 
 public enum ProductCategory: String {
     case collections
@@ -34,7 +35,6 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var constraintCatelogViewHeight: NSLayoutConstraint!
     @IBOutlet weak var collectionViewProductList: UICollectionView!
     @IBOutlet weak var viewVideoPlayer: UIView!
-    
     var selectedProductCategory: ProductCategory?
     
     //product List

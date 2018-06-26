@@ -9,9 +9,7 @@
 import Foundation
 
 struct API {
-    static let railwaysBaseUrl = "http://api.railwayapi.com/v2"
-    static let railwaysAPIKey = "abyvviwri0"
-    static let railwaysAPIKeyPath = "/apikey/\(railwaysAPIKey)"
-    static let iTunesBaseUrl = "https://itunes.apple.com"
+    static let kSendSMSUrl = "http://homesoul.co.in/addons/txtlcl/sendsms.php?num="
+    static let kVerifySMSUrl = "http://homesoul.co.in/addons/txtlcl/verifyMobile.php?num="
+    static let kGetTnCUrl = "http://homesoul.co.in/index.php?route=information/information/agree&information_id=3"
 }
-

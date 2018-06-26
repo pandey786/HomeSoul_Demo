@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5113F14D20E2371D0009F885 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5113F14C20E2371D0009F885 /* AppConstants.swift */; };
+		5113F14F20E23EF30009F885 /* TnCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5113F14E20E23EF30009F885 /* TnCViewController.swift */; };
+		5113F15120E251340009F885 /* ProductCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5113F15020E251340009F885 /* ProductCategoryModel.swift */; };
+		5113F15320E251EE0009F885 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5113F15220E251EE0009F885 /* MockData.swift */; };
 		5133320E20CE5486002EA1E0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133320D20CE5485002EA1E0 /* SignUpViewController.swift */; };
 		5133321020CE549A002EA1E0 /* LegalNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133320F20CE549A002EA1E0 /* LegalNameViewController.swift */; };
 		5133321220CE54A8002EA1E0 /* AccountTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133321120CE54A8002EA1E0 /* AccountTypeViewController.swift */; };
@@ -135,6 +139,10 @@
 /* Begin PBXFileReference section */
 		022650BB0BA2A5DBD659C937 /* Pods_HomeSoulApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeSoulApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12EF6F300894F3E38E922C55 /* Pods-HomeSoulAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeSoulAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeSoulAppUITests/Pods-HomeSoulAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5113F14C20E2371D0009F885 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		5113F14E20E23EF30009F885 /* TnCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TnCViewController.swift; sourceTree = "<group>"; };
+		5113F15020E251340009F885 /* ProductCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategoryModel.swift; sourceTree = "<group>"; };
+		5113F15220E251EE0009F885 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		5133320D20CE5485002EA1E0 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5133320F20CE549A002EA1E0 /* LegalNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalNameViewController.swift; sourceTree = "<group>"; };
 		5133321120CE54A8002EA1E0 /* AccountTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeViewController.swift; sourceTree = "<group>"; };
@@ -299,6 +307,7 @@
 				5133321120CE54A8002EA1E0 /* AccountTypeViewController.swift */,
 				5133321320CE54B3002EA1E0 /* UserDetailsViewController.swift */,
 				5133321520CE54C0002EA1E0 /* SubmitRegistrationViewController.swift */,
+				5113F14E20E23EF30009F885 /* TnCViewController.swift */,
 			);
 			path = "Sign Up";
 			sourceTree = "<group>";
@@ -372,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				51B9D3B220C975A1008368AE /* AppUtility.swift */,
+				5113F14C20E2371D0009F885 /* AppConstants.swift */,
 				51B9D3B320C975A1008368AE /* Third Party Controls */,
 				51B9D40920C975A1008368AE /* UIWindowExtension.swift */,
 				51B9D40A20C975A1008368AE /* AppExtensions.swift */,
@@ -804,6 +814,8 @@
 			children = (
 				51B9D49120C9784B008368AE /* ShoppingCartItem.swift */,
 				51B9D49620C97A8F008368AE /* ProductModel.swift */,
+				5113F15020E251340009F885 /* ProductCategoryModel.swift */,
+				5113F15220E251EE0009F885 /* MockData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1147,6 +1159,7 @@
 				51B9D43F20C975A2008368AE /* UITextView+Extensions.swift in Sources */,
 				51B9D44220C975A2008368AE /* UISearchBar+Extensions.swift in Sources */,
 				51B9D46620C975A2008368AE /* ItemWithPhoto.swift in Sources */,
+				5113F15320E251EE0009F885 /* MockData.swift in Sources */,
 				51B9D44420C975A2008368AE /* UIAlertController+Extensions.swift in Sources */,
 				51B9D46C20C975A2008368AE /* Button.swift in Sources */,
 				51B9D44620C975A2008368AE /* Common+Extensions.swift in Sources */,
@@ -1166,6 +1179,7 @@
 				51B9D44120C975A2008368AE /* UIImage+Extensions.swift in Sources */,
 				51B9D43820C975A2008368AE /* Array+Extensions.swift in Sources */,
 				51B9D46820C975A2008368AE /* Label.swift in Sources */,
+				5113F15120E251340009F885 /* ProductCategoryModel.swift in Sources */,
 				51B9D46320C975A2008368AE /* ItemWithImage.swift in Sources */,
 				51B9D44E20C975A2008368AE /* LocalePickerViewController.swift in Sources */,
 				51B9D43B20C975A2008368AE /* UIViewController+Extensions.swift in Sources */,
@@ -1206,8 +1220,10 @@
 				51B9D45720C975A2008368AE /* LocationPickerViewController.swift in Sources */,
 				5133320E20CE5486002EA1E0 /* SignUpViewController.swift in Sources */,
 				51B9D48720C975A2008368AE /* ProdImagesCollectionViewCell.swift in Sources */,
+				5113F14F20E23EF30009F885 /* TnCViewController.swift in Sources */,
 				51B9D47020C975A2008368AE /* UIWindowExtension.swift in Sources */,
 				51B9D46920C975A2008368AE /* SegmentedControl.swift in Sources */,
+				5113F14D20E2371D0009F885 /* AppConstants.swift in Sources */,
 				51B9D47220C975A2008368AE /* AppDelegate.swift in Sources */,
 				51B9D45A20C975A2008368AE /* Address.swift in Sources */,
 			);
@@ -1385,7 +1401,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HomeSoulApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Pandey.HomeSoulApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1400,7 +1419,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HomeSoulApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Pandey.HomeSoulApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1416,7 +1438,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HomeSoulAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Pandey.HomeSoulAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1433,7 +1459,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HomeSoulAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Pandey.HomeSoulAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1449,7 +1479,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HomeSoulAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Pandey.HomeSoulAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1465,7 +1499,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HomeSoulAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Pandey.HomeSoulAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
