@@ -10,11 +10,13 @@ import UIKit
 
 class ShoppingCartTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var imageViewProduct: UIImageView!
     @IBOutlet weak var labelProductTitle: UILabel!
     @IBOutlet weak var labelProductDesc: UILabel!
     @IBOutlet weak var labelProdPrice: UILabel!
     @IBOutlet weak var labelQuantity: UILabel!
     @IBOutlet weak var labelTotalPrice: UILabel!
+    @IBOutlet weak var buttonRemove: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -15,10 +15,17 @@ class ProdListCollectionViewCell_Grid: UICollectionViewCell {
     @IBOutlet weak var labelProdTitle: UILabel!
     @IBOutlet weak var labelProdPrice: UILabel!
     @IBOutlet weak var buttonAddToCart: UIButton!
+    @IBOutlet weak var imageViewProduct: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    public func setUpData(prodModel: ProductModel) {
+        self.labelProdTitle.text = prodModel.product_Title
+          self.labelProdPrice.text = "Rs. \(prodModel.product_Price)/meter"
+        self.imageViewProduct.image = UIImage.init(named: prodModel.product_Image)
     }
 
 }

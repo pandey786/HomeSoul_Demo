@@ -39,17 +39,23 @@ class DashboardViewController: UIViewController {
     
     //product List
     var viewType: ViewType = .grid
-    var productList = ["WOOVEN", "PRINTED", "EMBROIDERED", "OUTDOOR"]
+    var productList = ["Galaxy Series"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setUpNavigationView()
-        updateShoppingCartBadge(currentCtrl: self)
+        let shoppingCartItems = AppInstances.appDelegate.getProductsFromShoppingCart()
+        updateShoppingCartBadge(count: shoppingCartItems.count)
+        
+        //Fetch And Save Country List Data
+        _ = AppInstances.appDelegate.fetchAndSaveCountryListMapping()
         
         //Set Top View height
         self.constraintImageCarouselViewHeight.constant = self.view.bounds.size.height - 64.0 - 50.0
-        self.constraintCatelogViewHeight.constant = CGFloat((self.productList.count/2) * 200 + 100)
+        
+        let numberOfProdRows = (self.productList.count % 2 == 0) ? (self.productList.count/2): ((self.productList.count/2) + 1)
+        self.constraintCatelogViewHeight.constant = CGFloat(numberOfProdRows * 200 + 100)
         
         //Set Up Carousel
         let pathArray = ["http://www.gettyimages.ca/gi-resources/images/Embed/new/embed2.jpg",
@@ -87,8 +93,13 @@ class DashboardViewController: UIViewController {
     // MARK: - Actions
     // MARK: -
     @IBAction func buttonStartExploringTapped(_ sender: Any) {
-        let bottomOffset = CGPoint(x: 0, y: scrollViewMain.contentSize.height - scrollViewMain.bounds.size.height)
-        scrollViewMain.setContentOffset(bottomOffset, animated: true)
+        
+        //Navigate To Product Details page
+        self.performSegue(withIdentifier: "ProductListViewController", sender: nil)
+        
+        /*
+         let bottomOffset = CGPoint(x: 0, y: scrollViewMain.contentSize.height - scrollViewMain.bounds.size.height)
+         scrollViewMain.setContentOffset(bottomOffset, animated: true) */
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct ProductModel {
+struct ProductModel: Codable {
     var product_Id = ""
     var product_Title = ""
     var product_Image = ""

@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import RESideMenu
+import RAMAnimatedTabBarController
 
 struct StoryBoard {
     static let main: UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -22,11 +24,14 @@ public let bgColor: UIColor = UIColor.init(red: 250.0/255.0, green: 221.0/255.0,
 
 // MARK: - Shopping Cart Badge
 // MARK: -
-func updateShoppingCartBadge(currentCtrl: UIViewController) {
+func updateShoppingCartBadge(count: Int) {
     
-    let currentItems = DBManager.sharedInstance.getShoppingCartItemsFromDB()
-    if let shoppingCartTabBarItem = currentCtrl.tabBarController?.tabBar.items?[2] {
-        shoppingCartTabBarItem.badgeValue =  currentItems.count > 0 ? "\(currentItems.count)": nil
+    if let rootController: RESideMenu = AppInstances.appDelegate.window?.rootViewController as? RESideMenu {
+        if let rootCtrl: RAMAnimatedTabBarController = rootController.contentViewController as? RAMAnimatedTabBarController {
+            if let shoppingCartTabBarItem = rootCtrl.tabBar.items?[2] {
+                shoppingCartTabBarItem.badgeValue =  count > 0 ? "\(count)": nil
+            }
+        }
     }
 }
 
@@ -48,4 +53,19 @@ extension UIView {
         self.layer.cornerRadius = 5.0
         self.layer.masksToBounds = true
     }
+}
+
+// MARK: - Scale Image
+// MARK: -
+func scaleUIImageToSize(image: UIImage, size: CGSize) -> UIImage? {
+    let hasAlpha = false
+    let scale: CGFloat = 0.0
+    
+    UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale)
+    image.draw(in: CGRect(origin: CGPoint.zero, size: size))
+    
+    let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return scaledImage
 }

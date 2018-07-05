@@ -24,6 +24,11 @@ pod 'FacebookCore'
   pod 'AlamofireObjectMapper'
   pod 'PKHUD'
   pod 'Kingfisher'
+  pod 'EMAlertController'
+  pod 'HGPlaceholders'
+  pod 'RSSelectionMenu'
+  pod 'lottie-ios'
+  pod 'DZNEmptyDataSet'
   
   target 'HomeSoulAppTests' do
     inherit! :search_paths

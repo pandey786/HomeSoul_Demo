@@ -1,0 +1,6 @@
+framework module Avantgarde {
+  umbrella header "Avantgarde.h"
+
+  export *
+  module * { export * }
+}

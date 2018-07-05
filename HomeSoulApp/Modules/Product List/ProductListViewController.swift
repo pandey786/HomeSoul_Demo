@@ -24,13 +24,14 @@ class ProductListViewController: UIViewController {
     
     var productCategoryList = [ProductCategoryModel]()
     var productList = [ProductModel]()
+    var selectedProduct: ProductModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Set Up Data Source
         self.productCategoryList = MockData().createMockData()
-        self.productList = (self.productCategoryList.first?.category_Catalog)!
+        self.loadProductList(prodCategory: self.productCategoryList.first!)
         
         let title = prepareNavigationBarMenuTitleView()
         self.prepareNavigationBarMenu(title)
@@ -41,6 +42,13 @@ class ProductListViewController: UIViewController {
         self.collectionViewProductList.register(UINib.init(nibName: "ProdListCollectionViewCell_Grid", bundle: nil), forCellWithReuseIdentifier: "ProdListCollectionViewCell_Grid")
         self.collectionViewProductList.register(UINib.init(nibName: "ProdListCollectionViewCell_List", bundle: nil), forCellWithReuseIdentifier: "ProdListCollectionViewCell_List")
         
+        self.collectionViewProductList.emptyDataSetDelegate = self
+        self.collectionViewProductList.emptyDataSetSource = self
+    }
+    
+    private func loadProductList(prodCategory: ProductCategoryModel) {
+        self.productList = prodCategory.category_Catalog
+        self.collectionViewProductList.reloadData()
     }
     
     @IBAction func buttonBlockTapped(_ sender: Any) {
@@ -80,7 +88,7 @@ extension ProductListViewController: UICollectionViewDataSource, UICollectionVie
             let collectionCell: ProdListCollectionViewCell_Grid = collectionView.dequeueReusableCell(withReuseIdentifier: "ProdListCollectionViewCell_Grid", for: indexPath) as! ProdListCollectionViewCell_Grid
             
             let prodModel = self.productList[indexPath.item]
-            collectionCell.labelProdTitle.text = prodModel.product_Title
+            collectionCell.setUpData(prodModel: prodModel)
             
             //Add Button Target
             collectionCell.buttonAddToCart.tag = indexPath.item
@@ -95,7 +103,7 @@ extension ProductListViewController: UICollectionViewDataSource, UICollectionVie
             let collectionCell: ProdListCollectionViewCell_List = collectionView.dequeueReusableCell(withReuseIdentifier: "ProdListCollectionViewCell_List", for: indexPath) as! ProdListCollectionViewCell_List
             
             let prodModel = self.productList[indexPath.item]
-            collectionCell.labelProdTitle.text = prodModel.product_Title
+            collectionCell.setUpData(prodModel: prodModel)
             
             //Add Button Target
             collectionCell.buttonAddToCart.tag = indexPath.item
@@ -112,7 +120,7 @@ extension ProductListViewController: UICollectionViewDataSource, UICollectionVie
         
         switch self.viewType {
         case .grid:
-            let itemSize = CGSize.init(width: collectionView.frame.size.width/2 - 5, height: 200)
+            let itemSize = CGSize.init(width: collectionView.frame.size.width/2 - 5, height: 240)
             return itemSize
             
         case .list:
@@ -122,32 +130,23 @@ extension ProductListViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.selectedProduct = self.productList[indexPath.item]
         self.performSegue(withIdentifier: "ProductDetailsViewController", sender: nil)
     }
     
     @objc func addToCartButtonTapped(sender: UIButton) {
         
         let prodModel = self.productList[sender.tag]
+        AppInstances.appDelegate.addProductToCart(prodModel: prodModel)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let currentItems = DBManager.sharedInstance.getShoppingCartItemsFromDB()
-        if let existingItem = currentItems.filter(NSPredicate.init(format: "product_Id == %@", prodModel.product_Id)).first {
-            try! DBManager.sharedInstance.database.write {
-                existingItem.product_Quantity =  existingItem.product_Quantity + 1
-                DBManager.sharedInstance.database.add(existingItem, update: true)
-            }
-        } else {
-            
-            let shoppingCartItem = ShoppingCartItem()
-            shoppingCartItem.id = Int(arc4random())
-            shoppingCartItem.product_Id = prodModel.product_Id
-            shoppingCartItem.product_Name = prodModel.product_Title
-            shoppingCartItem.product_Price = prodModel.product_Price
-            shoppingCartItem.product_Quantity =  shoppingCartItem.product_Quantity + 1
-            
-            DBManager.sharedInstance.addShoppingCartItem(object: shoppingCartItem)
+        if segue.identifier == "ProductDetailsViewController" {
+            let prodDetail: ProductDetailsViewController = segue.destination as! ProductDetailsViewController
+            prodDetail.selectedProduct = selectedProduct
         }
-        
-        updateShoppingCartBadge(currentCtrl: self)
     }
 }
 
@@ -229,6 +228,14 @@ extension ProductListViewController: DropDownMenuDelegate {
     // MARK: - Actions
     @IBAction func choose(_ sender: AnyObject) {
         titleView.title = (sender as! DropDownMenuCell).textLabel!.text
+        
+        //get Product Category
+        if let selectedProdCategory: ProductCategoryModel = self.productCategoryList.filter({ (prodCatModel) -> Bool in
+            return prodCatModel.category_Design == titleView.title
+        }).first {
+            self.loadProductList(prodCategory: selectedProdCategory)
+        }
+        
         showToolbarMenu()
     }
     
@@ -293,3 +300,40 @@ func statusBarHeight() -> CGFloat {
     let statusBarSize = UIApplication.shared.statusBarFrame.size
     return min(statusBarSize.width, statusBarSize.height)
 }
+
+// MARK: - Empty State
+// MARK: -
+extension ProductListViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        let text = "Oops! Nothing Found Here";
+        let font = UIFont.boldSystemFont(ofSize: 17.0)
+        let textColor = UIColor.init(hexString: "#25282b")
+        
+        var textAttr = [NSAttributedStringKey: Any]()
+        textAttr[.font] = font
+        textAttr[.foregroundColor] = textColor
+        
+        let attrStr = NSAttributedString.init(string: text, attributes: textAttr)
+        return attrStr
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        let emptyPlaceHolderImage = UIImage.init(named: "placeholder_Empty")
+        return emptyPlaceHolderImage
+    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.init(hexString: "#f0f3f5")
+    }
+    
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+    
+    func emptyDataSetShouldAnimateImageView(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+}
+

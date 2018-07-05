@@ -99,6 +99,7 @@
             <size key="customSize" width="267" height="317"/>
             <connections>
                 <outlet property="buttonAddToCart" destination="u94-c4-cmu" id="Wzo-8I-dZZ"/>
+                <outlet property="imageViewProduct" destination="WZe-GX-5Rw" id="uAF-J8-R4b"/>
                 <outlet property="labelProdPrice" destination="aC3-Ki-ipa" id="teJ-tp-amL"/>
                 <outlet property="labelProdTitle" destination="rlL-t5-yMb" id="OKR-pg-dvv"/>
                 <outlet property="viewAddToCart" destination="ycd-oG-xgH" id="HGW-6N-TAK"/>

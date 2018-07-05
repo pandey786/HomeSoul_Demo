@@ -75,11 +75,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eiu-Pq-Pvf">
+                        <rect key="frame" x="10" y="122.5" width="52" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="Remove">
+                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="5Yq-Ob-A8j" secondAttribute="trailing" id="4N6-G8-5JI"/>
                     <constraint firstItem="5Yq-Ob-A8j" firstAttribute="top" relation="greaterThanOrEqual" secondItem="V2z-YI-WHe" secondAttribute="bottom" constant="10" id="5Sr-6n-nvX"/>
                     <constraint firstItem="RHP-r7-RPD" firstAttribute="top" secondItem="07h-EO-cgE" secondAttribute="bottom" constant="5" id="5lD-wC-DgA"/>
+                    <constraint firstItem="Eiu-Pq-Pvf" firstAttribute="centerY" secondItem="RHP-r7-RPD" secondAttribute="centerY" id="5wF-di-P84"/>
                     <constraint firstItem="5Yq-Ob-A8j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="76w-sh-E6i"/>
                     <constraint firstAttribute="bottom" secondItem="5Yq-Ob-A8j" secondAttribute="bottom" id="BMh-it-rfw"/>
                     <constraint firstItem="Ddw-TX-DPL" firstAttribute="top" secondItem="92K-Hs-8UN" secondAttribute="bottom" constant="5" id="ECc-Nq-2a9"/>
@@ -93,6 +101,7 @@
                     <constraint firstAttribute="trailing" secondItem="C4k-Xm-yyx" secondAttribute="trailing" constant="10" id="Yy3-Oo-70s"/>
                     <constraint firstItem="5Yq-Ob-A8j" firstAttribute="top" secondItem="C4k-Xm-yyx" secondAttribute="bottom" constant="10" id="aaK-kj-hdg"/>
                     <constraint firstItem="k8q-oc-Zle" firstAttribute="top" secondItem="fN0-uJ-aVA" secondAttribute="bottom" constant="2" id="esF-L6-oyi"/>
+                    <constraint firstItem="Eiu-Pq-Pvf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="gfs-SJ-8pG"/>
                     <constraint firstItem="V2z-YI-WHe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="iut-ic-olI"/>
                     <constraint firstItem="fN0-uJ-aVA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="l3x-Vh-mA3"/>
                     <constraint firstItem="k8q-oc-Zle" firstAttribute="trailing" secondItem="fN0-uJ-aVA" secondAttribute="trailing" id="oXj-pQ-1nr"/>
@@ -104,6 +113,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="buttonRemove" destination="Eiu-Pq-Pvf" id="1qR-dX-Cbi"/>
+                <outlet property="imageViewProduct" destination="V2z-YI-WHe" id="tnZ-XN-AhA"/>
                 <outlet property="labelProdPrice" destination="92K-Hs-8UN" id="nvP-PP-nlb"/>
                 <outlet property="labelProductDesc" destination="k8q-oc-Zle" id="vgJ-Pz-3Mb"/>
                 <outlet property="labelProductTitle" destination="fN0-uJ-aVA" id="sSQ-Rx-Xd9"/>

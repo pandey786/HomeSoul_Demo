@@ -25,6 +25,10 @@ class LoginViewController: UIViewController {
         
         self.setUpViews()
         
+        UserLoginService.userLogin(UserLoginRequest()) { (isSuccess, errorStr) in
+            
+        }
+        
         //Load Dashboard Explicitly
         //AppInstances.appDelegate.loadDashboardScreen()
     }

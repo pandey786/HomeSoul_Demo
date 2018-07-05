@@ -8,6 +8,20 @@
 
 import Foundation
 import UIKit
+import PKHUD
+
+// MARK: - HUD
+// MARK: -
+extension IndicatableView where Self: UIViewController {
+    
+    func showActivityIndicator() {
+        HUD.show(.progress)
+    }
+    
+    func hideActivityIndicator() {
+        HUD.hide()
+    }
+}
 
 extension UITextField {
     func setLeftPaddingPoints(_ amount:CGFloat){

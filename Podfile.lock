@@ -11,6 +11,8 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
   - DropDownMenuKit (0.8.4)
+  - DZNEmptyDataSet (1.8.1)
+  - EMAlertController (1.0.1)
   - FacebookCore (0.3.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.27)
@@ -43,9 +45,11 @@ PODS:
   - GTMSessionFetcher/Core (1.1.15)
   - GTMSessionFetcher/Full (1.1.15):
     - GTMSessionFetcher/Core (= 1.1.15)
+  - HGPlaceholders (0.3.0)
   - IQKeyboardManagerSwift (6.0.3)
   - JTMaterialTransition (2.0.1)
   - Kingfisher (4.8.0)
+  - lottie-ios (2.5.0)
   - LTHRadioButton (1.2.0)
   - ObjectMapper (3.1.0)
   - PKHUD (5.0.0)
@@ -56,6 +60,7 @@ PODS:
   - RealmSwift (3.5.0):
     - Realm (= 3.5.0)
   - RESideMenu (4.0.7)
+  - RSSelectionMenu (3.3)
   - SinchVerification-Swift (2.0.6)
   - SwiftValidator (4.0.0)
 
@@ -64,18 +69,23 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireObjectMapper
   - DropDownMenuKit
+  - DZNEmptyDataSet
+  - EMAlertController
   - FacebookCore
   - FacebookLogin
   - GoogleSignIn
+  - HGPlaceholders
   - IQKeyboardManagerSwift
   - JTMaterialTransition (~> 2.0)
   - Kingfisher
   - Kingfisher (~> 4.0)
+  - lottie-ios
   - LTHRadioButton
   - PKHUD
   - RAMAnimatedTabBarController
   - RealmSwift
   - RESideMenu
+  - RSSelectionMenu
   - SinchVerification-Swift
   - SwiftValidator (from `https://github.com/jpotts18/SwiftValidator.git`, branch `master`)
 
@@ -86,6 +96,8 @@ SPEC REPOS:
     - AlamofireObjectMapper
     - Bolts
     - DropDownMenuKit
+    - DZNEmptyDataSet
+    - EMAlertController
     - FacebookCore
     - FacebookLogin
     - FBSDKCoreKit
@@ -94,9 +106,11 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GTMOAuth2
     - GTMSessionFetcher
+    - HGPlaceholders
     - IQKeyboardManagerSwift
     - JTMaterialTransition
     - Kingfisher
+    - lottie-ios
     - LTHRadioButton
     - ObjectMapper
     - PKHUD
@@ -104,6 +118,7 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - RESideMenu
+    - RSSelectionMenu
     - SinchVerification-Swift
 
 EXTERNAL SOURCES:
@@ -122,6 +137,8 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   DropDownMenuKit: 3800deee46883bb09725376d987900768532f588
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  EMAlertController: db945aa666b737b86b0d22c9ee464e552fc63bb8
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
   FBSDKCoreKit: 572b047a7e029bc44542bcf8a59414e7ff2b543e
@@ -130,9 +147,11 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
+  HGPlaceholders: 2df01c51b04a30acd0b8c9c7161c7cdde4541109
   IQKeyboardManagerSwift: 04e8679f85e496bb2c474eeb9284052f1b3c391c
   JTMaterialTransition: 2350b44b404d1982a7ba755866cc65da452f4eec
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   LTHRadioButton: bcd4b49a8e0af81b5140e67583a868d96e956557
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
@@ -140,9 +159,10 @@ SPEC CHECKSUMS:
   Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
   RealmSwift: 3322562622fda2ad596985ead4d8d8be30cf838c
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
+  RSSelectionMenu: 5b75ea1812295ac826e5b444ed91768bda00f3f0
   SinchVerification-Swift: 6188011479120d3e6ff13fa646189b10194e308e
   SwiftValidator: 25ded5ca1f10c05adf57f6ac82a72d28ac8d91af
 
-PODFILE CHECKSUM: 18dcb4fb64477a577e5e64a5ccb56e4c1e5290f9
+PODFILE CHECKSUM: a4860c2a8a3e41010056dafd69f5e39a9b470f59
 
 COCOAPODS: 1.5.0

@@ -14,11 +14,14 @@ import RESideMenu
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    let kShoppingCart = "Shopping_Cart"
+    let kCountryStateMapping = "Country_State"
+    
     var window: UIWindow?
     var sideMenuViewController: RESideMenu?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+        
         //Load Splash as Root Controller
         self.loadSplashScreen()
         
@@ -31,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initialize sign-in
         GIDSignIn.sharedInstance().clientID = "602111596084-htqi3k3729rob8jrcgo77j7mog5sbk0o.apps.googleusercontent.com"
-
+        
         return true
     }
     
@@ -97,6 +100,103 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    // MARK: - App Utilities
+    // MARK: -
+    
+    func addProductToCart(prodModel: ProductModel) {
+        
+        var prodList = [ShoppingCartItem]()
+        
+        if let cartProdListData: Data  = UserDefaults.standard.object(forKey: kShoppingCart) as? Data {
+            if let cartProducts: [ShoppingCartItem] = NSKeyedUnarchiver.unarchiveObject(with: cartProdListData) as? [ShoppingCartItem] {
+                prodList.append(contentsOf: cartProducts)
+            }
+        }
+        
+        if let selectedProduct: ShoppingCartItem = prodList.filter({ (cartItem) -> Bool in
+            return cartItem.product_Id == prodModel.product_Id
+        }).first {
+            selectedProduct.product_Quantity = "\(Int(selectedProduct.product_Quantity.count > 0 ? selectedProduct.product_Quantity: "0")! + 1)"
+        } else {
+            
+            let newProd = ShoppingCartItem.init(product_Id: prodModel.product_Id, product_Title: prodModel.product_Title, product_Image: prodModel.product_Image, product_Price: prodModel.product_Price, product_Quantity: "1")
+            prodList.append(newProd)
+        }
+        
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: prodList)
+        UserDefaults.standard.set(encodedData, forKey: kShoppingCart)
+        UserDefaults.standard.synchronize()
+        
+        updateShoppingCartBadge(count: prodList.count)
+    }
+    
+    func removeProductFromCart(prodModel: ShoppingCartItem) {
+        
+        var prodList = [ShoppingCartItem]()
+        
+        if let cartProdListData: Data  = UserDefaults.standard.object(forKey: kShoppingCart) as? Data {
+            if let cartProducts: [ShoppingCartItem] = NSKeyedUnarchiver.unarchiveObject(with: cartProdListData) as? [ShoppingCartItem] {
+                prodList.append(contentsOf: cartProducts)
+            }
+        }
+        
+        if let selectedProduct: ShoppingCartItem = prodList.filter({ (cartItem) -> Bool in
+            return cartItem.product_Id == prodModel.product_Id
+        }).first {
+            prodList.remove(selectedProduct)
+        }
+        
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: prodList)
+        UserDefaults.standard.set(encodedData, forKey: kShoppingCart)
+        UserDefaults.standard.synchronize()
+        
+        updateShoppingCartBadge(count: prodList.count)
+    }
+    
+    func getProductsFromShoppingCart() -> [ShoppingCartItem] {
+        
+        var prodList = [ShoppingCartItem]()
+        if let cartProdListData: Data  = UserDefaults.standard.object(forKey: kShoppingCart) as? Data {
+            if let cartProducts: [ShoppingCartItem] = NSKeyedUnarchiver.unarchiveObject(with: cartProdListData) as? [ShoppingCartItem] {
+                prodList.append(contentsOf: cartProducts)
+            }
+        }
+        
+        return prodList
+    }
+    
+    func getCountryListMappingModel() -> CountryListMappingModel? {
+        
+        var countryListMappingModel: CountryListMappingModel?
+        if let countryListData: Data  = UserDefaults.standard.object(forKey: kCountryStateMapping) as? Data {
+            if let countryStateModel: CountryListMappingModel = NSKeyedUnarchiver.unarchiveObject(with: countryListData) as? CountryListMappingModel {
+                countryListMappingModel = countryStateModel
+            }
+        } else {
+            countryListMappingModel = self.fetchAndSaveCountryListMapping()
+        }
+        
+        return countryListMappingModel
+    }
+    
+    func fetchAndSaveCountryListMapping() -> CountryListMappingModel? {
+        
+        var countryListMappingModel: CountryListMappingModel?
+        if let filePath = Bundle.main.path(forResource: "countryListMapping", ofType: "json") {
+            if let contentData = FileManager.default.contents(atPath: filePath) {
+                if let content: String = String.init(data: contentData, encoding: .utf8) {
+                    do {
+                        let countryListMappingObj = try CountryListMappingModel(content)
+                        countryListMappingModel = countryListMappingObj
+                    } catch(let error) {
+                        print(error)
+                    }
+                }
+            }
+        }
+        
+        return countryListMappingModel
+    }
     
 }
 
